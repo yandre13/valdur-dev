@@ -7,14 +7,14 @@ export default function Circles({ children }) {
     // animate .circles like a wheel and then animate .circles .ball
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
     tl.to(".circles", {
-      duration: 4,
+      duration: 10,
       rotation: 360,
       repeat: -1,
       ease: "none",
     })
       .to(".circles .ball", {
-        duration: 1.6,
-        scale: function (index, elem) {
+        duration: 3,
+        scale: function (index) {
           if (index === 0) return 1.3
           if (index === 1) return 1.6
           if (index === 2) return 0.7

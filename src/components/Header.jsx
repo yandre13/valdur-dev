@@ -44,6 +44,7 @@ const CloseIcon = () => (
 export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleToggle = () => {
     const navlinks = document.querySelector(".navlinks");
@@ -71,34 +72,48 @@ export default function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="Header container">
-      <Link to="/" className="logo">
-        <div>
-          <img src={logo} alt="VALDUR" />
-        </div>
-        <h1>VALDUR</h1>
-
-      </Link>
-
-      <nav className="navlinks">
-        <ul>
-          {links.map((link, index) => (
-            <li key={index}>
-              <NavLink to={link.path} className={({ isActive }) => isActive ? "active" : ""}>{link.name}</NavLink>
-            </li>
-          ))}
-        </ul>
-        {isOpen && (
-          <div style={{ transform: "translateX(33%)" }}>
-            <Circles />
+    <header className={`Header ${scrollPosition > 0 ? 'shadow' : ''}`}>
+      <div className="header-content container">
+        <Link to="/" className="logo">
+          <div>
+            <img src={logo} alt="VALDUR" />
           </div>
-        )}
-      </nav>
+          <h1>VALDUR</h1>
 
-      <button className="burger-button" onClick={handleToggle}>
-        {isOpen ? <CloseIcon /> : <BurgerIcon />}
-      </button>
+        </Link>
+
+        <nav className="navlinks">
+          <ul>
+            {links.map((link, index) => (
+              <li key={index}>
+                <NavLink to={link.path} className={({ isActive }) => isActive ? "active" : ""}>{link.name}</NavLink>
+              </li>
+            ))}
+          </ul>
+          {isOpen && (
+            <div style={{ transform: "translateX(33%)" }}>
+              <Circles />
+            </div>
+          )}
+        </nav>
+
+        <button className="burger-button" onClick={handleToggle}>
+          {isOpen ? <CloseIcon /> : <BurgerIcon />}
+        </button>
+      </div>
     </header>
   );
 }

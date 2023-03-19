@@ -106,9 +106,20 @@ html {
 .Header {
   padding-top: 12px;
   padding-bottom: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background: #fcfaf7;
+}
+.Header .header-content {
   display: flex;
   justify-content: space-between;
+  position: sticky;
 }
+.Header.shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .navlinks {
   display: none;
 }
@@ -537,6 +548,11 @@ html {
     display: flex;
     flex-direction: row;
     gap: 100px;
+  }
+  .projects-text {
+    height: 480px;
+    position: sticky;
+    top: 84px;
   }
   .tools {
     padding: 66px 0 48px;
