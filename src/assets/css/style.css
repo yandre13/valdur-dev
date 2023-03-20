@@ -123,12 +123,12 @@ html {
 .navlinks {
   display: none;
 }
-.navlinks.active {
+.navlinks {
   display: block;
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 48px;
   height: 100vh;
   background-color: #fff;
   z-index: 20;
@@ -137,6 +137,7 @@ html {
   display: flex;
   flex-direction: column;
   padding: 48px 40px;
+  padding-top: 0;
   gap: 40px;
   list-style: none;
 }
@@ -167,11 +168,21 @@ html {
 .navlinks ul li a.active::after {
   width: 100%;
 }
+.burger-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+}
 .burger-button {
   background: none;
   border: none;
   outline: none;
   z-index: 20;
+  position: absolute;
+  top: 19px;
+  right: 24px;
 }
 
 @media screen and (min-width: 768px) {

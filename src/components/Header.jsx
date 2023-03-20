@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { motion, useAnimate, usePresence } from "framer-motion";
 import logo from "../assets/svg/logo.svg"
 import Circles from "./Circles";
 
@@ -40,15 +41,50 @@ const CloseIcon = () => (
     <path d="M15.8812 5.88164L14.1187 4.11914L9.99997 8.23164L5.88122 4.11914L4.11871 5.88164L8.23122 10.0004L4.11871 14.1191L5.88122 15.8816L9.99997 11.7691L14.1187 15.8816L15.8812 14.1191L11.7687 10.0004L15.8812 5.88164Z" fill="#7678ED" />
   </svg>
 )
+const variants = {
+  open: {
+    transition: {
+      delay: 0.4,
+      // delay between each item
+      staggerChildren: .1,
+      // delay in ms for items
+      delayChildren: 0.4
+    }
+  },
+  closed: {
+    transition: {
+      delay: .1,
+      staggerChildren: 0.04, staggerDirection: -1
+    }
+  }
+};
+const variantsItem = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 }
+    }
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 }
+    }
+  }
+};
 
 export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  const [scope, animate] = useAnimate()
+
   const handleToggle = () => {
-    const navlinks = document.querySelector(".navlinks");
-    navlinks.classList.toggle("active");
+    // const navlinks = document.querySelector(".navlinks");
+    // navlinks.classList.toggle("active");
     setIsOpen(!isOpen);
   }
 
@@ -84,9 +120,50 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      const enterAnimation = async () => {
+        animate('.burger-container', {
+          clipPath: `circle(1000px at 30px 20px)`,
+          height: '100vh',
+        }, {
+          duration: 0.3,
+        })
+        animate('.navlinks', {
+          opacity: 1,
+          x: 0,
+        }, {
+          delay: 0.3,
+          duration: 0.3,
+        })
+
+      }
+      enterAnimation()
+    } else {
+      const exitAnimation = async () => {
+        animate('.navlinks', {
+          opacity: 0,
+          x: -100,
+        }, {
+          delay: 0.2,
+          duration: 0.2,
+        })
+        animate('.burger-container', {
+          clipPath: 'circle(24px at 325px 30px)',
+          height: '60px',
+        }, {
+          delay: 0.3,
+          duration: 0.3,
+        })
+      }
+      exitAnimation()
+    }
+
+  }, [isOpen])
+
   return (
     <header className={`Header ${scrollPosition > 0 ? 'shadow' : ''}`}>
-      <div className="header-content container">
+      <div className="header-content container" ref={scope}>
         <Link to="/" className="logo">
           <div>
             <img src={logo} alt="VALDUR" />
@@ -96,13 +173,14 @@ export default function Header() {
         </Link>
 
         <nav className="navlinks">
-          <ul>
+          <motion.ul variants={variants} initial={false}
+            animate={isOpen ? "open" : "closed"}>
             {links.map((link, index) => (
-              <li key={index}>
+              <motion.li key={index} variants={variantsItem}>
                 <NavLink to={link.path} className={({ isActive }) => isActive ? "active" : ""}>{link.name}</NavLink>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
           {isOpen && (
             <div style={{ transform: "translateX(33%)" }}>
               <Circles />
@@ -110,9 +188,11 @@ export default function Header() {
           )}
         </nav>
 
-        <button className="burger-button" onClick={handleToggle}>
-          {isOpen ? <CloseIcon /> : <BurgerIcon />}
-        </button>
+        <div className="burger-container">
+          <button className="burger-button" onClick={handleToggle}>
+            {isOpen ? <CloseIcon /> : <BurgerIcon />}
+          </button>
+        </div>
       </div>
     </header>
   );

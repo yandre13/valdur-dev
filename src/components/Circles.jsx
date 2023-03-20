@@ -4,7 +4,6 @@ import gsap from "gsap";
 export default function Circles({ children }) {
 
   useEffect(() => {
-    // animate .circles like a wheel and then animate .circles .ball
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
     tl.to(".circles", {
       duration: 10,
