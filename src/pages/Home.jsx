@@ -8,6 +8,11 @@ import play from "../assets/svg/play.svg";
 import Balls from "../components/Balls";
 import Circles from "../components/Circles";
 
+//icons
+import arrow from "../assets/svg/arrow.svg"
+import Arrow from "../components/Arrow";
+import LetsTalk from "../components/LetsTalk";
+
 export default function Home() {
   return (
     <main>
@@ -30,12 +35,16 @@ export default function Home() {
               <div className="dot"></div>
               <span>Online</span>
             </div>
-            CURRENTLY <span className="font-bold">AVAILABLE</span> FOR FREELANCE WORLDWIDE.
+            CURRENTLY AVAILABLE FOR FREELANCE WORLDWIDE.
           </div>
         </div>
+        {/* Arrow */}
+        <Arrow />
       </section>
 
-      <Balls />
+      <Visit fixed />
+
+      {/* <Balls /> */}
       <section className="About container">
         <div className="image">
           <img className="photo" width="608" height="658" src="/img/about.png" alt="About me" />
@@ -46,7 +55,7 @@ export default function Home() {
             About me<span className="text-orange">.</span>
           </h3>
 
-          <p className="description-section">
+          <p className="description-section text-justify">
             My design philosophy is to create products that solve real-world problems, while keeping the end user in mind. My goal is to create products that not only look great, but also <span className="font-bold">enhance the user's experience.</span>
           </p>
 
@@ -93,7 +102,7 @@ export default function Home() {
             My Projects<span className="text-orange">.</span>
           </h3>
 
-          <p className="description-section">
+          <p className="description-section text-justify">
             You will find my latest work, whether it's personal projects, collaborations, or professional endeavors. I believe that sharing, is the best way to inspire others and to grow as a <span className="font-bold">creative individual.</span> I hope you enjoy browsing through my portfolio!
           </p>
 
@@ -109,6 +118,24 @@ export default function Home() {
           <Card title="Ux Case Study RIMAC insurances" image="/img/card1.png" link="#" />
           <Card title="Ux Case Study RIMAC insurances" image="/img/card1.png" link="#" customClass="top264" />
         </div>
+        <div className="projects-circles-top">
+          <Circles balls={
+            <>
+              <div data-scale="1.3" className="ball ball-red"></div>
+              <div data-scale="1.6" className="ball ball-yellow"></div>
+              <div data-scale="0.7" className="ball ball-blue"></div>
+            </>
+          } />
+        </div>
+        <div className="projects-circles-bottom">
+          <Circles balls={
+            <>
+              <div data-scale="1.3" className="ball ball-red"></div>
+              <div data-scale="1.6" className="ball ball-orange"></div>
+              <div data-scale="0.7" className="ball ball-yellow"></div>
+            </>
+          } />
+        </div>
       </section>
 
       <section className="Accessibility">
@@ -123,25 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="LetsTalk container">
-
-        <div className="lets-talk-text">
-          <h3 className="title-section">
-            <span className="font-rainbow text-trans-initial">Let’s talk</span> about the next big thing
-          </h3>
-
-          <p className="description-section">
-            If you have other requests or questions about projects, don’t hesitate to email me at <span className="font-bold">hi@valdurdesign.com</span> or send me a message.
-          </p>
-
-          <div className="button-container">
-            <button className="main-button">Send a message</button>
-          </div>
-        </div>
-
-        <Visit />
-
-      </section>
+      <LetsTalk />
     </main>
   );
 }

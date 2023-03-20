@@ -28,9 +28,9 @@ const tools = [
   },
 ];
 
-export default function Tools() {
+export default function Tools({ customClass }) {
   return (
-    <div className="tools">
+    <div className={`tools ${customClass || ''}`}>
       <p>Tools used:</p>
       <ul>
         {tools.map((tool, index) => (

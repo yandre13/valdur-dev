@@ -80,6 +80,9 @@ body::-webkit-scrollbar-thumb {
 .text-trans-initial {
   text-transform: initial;
 }
+.text-justify {
+  text-align: justify;
+}
 
 @media screen and (min-width: 768px) {
   .text-nowrap {
@@ -209,11 +212,11 @@ html {
 
 .logo h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   line-height: 24px;
   letter-spacing: 0.2px;
-  color: #2b2b77;
+  color: #f18701;
 }
 
 /* HERO SECTION */
@@ -223,6 +226,7 @@ html {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .gpap-circles {
@@ -293,13 +297,16 @@ html {
 .badge {
   display: none;
 }
+.arrow {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .Hero {
     padding-top: 80px;
     display: flex;
     flex-direction: row;
     gap: 64px;
-    overflow: auto;
+    overflow: inherit;
   }
   .gpap-circles {
     max-width: 568px;
@@ -379,6 +386,13 @@ html {
     height: 10px;
     background-color: #383838;
     border-radius: 50%;
+  }
+
+  .arrow {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -86px;
   }
 }
 
@@ -465,10 +479,15 @@ html {
   padding-bottom: 160px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: clip;
 }
 
 .tools {
   padding: 44px 0;
+}
+.tools.paddings {
+  padding-top: 28px;
 }
 .tools p {
   font-size: 16px;
@@ -532,7 +551,7 @@ html {
 .gallery__item .button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   margin-top: 32px;
   font-size: 16px;
   font-weight: 700;
@@ -541,6 +560,30 @@ html {
   color: #7678ed;
 }
 
+.projects-circles-top {
+  position: absolute;
+  top: -38px;
+  right: -96px;
+  width: 300px;
+  transform: scale(0.6);
+}
+.projects-circles-bottom {
+  position: absolute;
+  bottom: 184px;
+  left: 72px;
+  width: 300px;
+  transform: scale(0.6);
+}
+.projects-circles-top .gpap-circles {
+  margin-top: 0;
+}
+.projects-circles-top .circles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 300px;
+}
 @media screen and (min-width: 768px) {
   .Projects {
     padding-top: 120px;
@@ -548,6 +591,7 @@ html {
     display: flex;
     flex-direction: row;
     gap: 100px;
+    overflow-x: inherit;
   }
   .projects-text {
     height: 480px;
@@ -556,6 +600,10 @@ html {
   }
   .tools {
     padding: 66px 0 48px;
+  }
+  .tools.paddings {
+    padding-top: 16px;
+    padding-bottom: 40px;
   }
   .tools ul {
     gap: 24px;
@@ -570,6 +618,28 @@ html {
   .top264 {
     position: relative;
     top: 264px;
+  }
+  .projects-circles-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    transform: scale(0.8);
+  }
+  .projects-circles-bottom {
+    position: absolute;
+    bottom: 284px;
+    left: 626px;
+    width: 400px;
+    transform: scale(0.8);
+    z-index: -1;
+  }
+  .projects-circles-top .circles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 300px;
   }
 }
 
@@ -645,12 +715,64 @@ html {
   padding-bottom: 52px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.LetsTalk .arrow {
+  position: absolute;
+  top: 434px;
+  right: 20px;
+  display: block;
+  transform: rotate(86deg);
 }
 .lets-talk-text .button-container {
   margin-top: 44px;
 }
 .social-media {
   margin-top: 64px;
+}
+.visitFixed {
+  display: none;
+}
+.social-media.fixed {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 14px;
+  box-shadow: 0px 0px 16px 0px #1f2e3a1a;
+  border-radius: 16px;
+  background: #fcfaf7;
+  z-index: 90;
+}
+.social-media.fixed p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+.social-media.fixed ul {
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+.social-media.fixed ul li a {
+  box-shadow: none;
+  background-color: #fcfaf7;
+  position: relative;
+}
+.social-media.fixed ul li a::after {
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: 4px;
+  width: 40px;
+  height: 1px;
+  border-radius: 50%;
+  background: #d9d7d3;
+}
+.social-media.fixed ul > li:last-child > a::after {
+  display: none;
 }
 .social-media p {
   font-size: 16px;
@@ -676,6 +798,12 @@ html {
   justify-content: center;
   align-items: center;
 }
+.LetsTalk .button-back {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
   .LetsTalk {
     padding-top: 120px;
@@ -683,6 +811,19 @@ html {
     display: flex;
     flex-direction: row;
     gap: 100px;
+  }
+  .LetsTalk .arrow {
+    position: absolute;
+    top: 114px;
+    left: 750px;
+    bottom: initial;
+    transform: none;
+  }
+  .visitFixed {
+    display: block;
+  }
+  .social-media {
+    margin-top: 124px;
   }
   .lets-talk-text {
     max-width: 640px;
@@ -700,6 +841,10 @@ html {
   .social-media ul li a {
     height: 48px;
     width: 48px;
+  }
+  .LetsTalk .button-back {
+    right: 40px;
+    bottom: 40px;
   }
 }
 
@@ -743,6 +888,24 @@ html {
   border-radius: 40px;
 }
 
+/* ABOUT PAGE */
+
+.AboutPage .description-section {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+  .AboutPage.About {
+    gap: 80px;
+  }
+  .AboutPage .about-text {
+    padding-top: 40px;
+  }
+}
+
 /* BALLS */
 .Balls {
   display: none;
@@ -766,6 +929,9 @@ html {
 
 .ball-purple {
   background: #7678ed;
+}
+.ball-blue {
+  background: #2b2b77;
 }
 .ball-yellow {
   background: #f7b801;

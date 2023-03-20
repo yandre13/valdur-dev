@@ -89,9 +89,9 @@ export default function Header() {
       <div className="header-content container">
         <Link to="/" className="logo">
           <div>
-            <img src={logo} alt="VALDUR" />
+            <img src={logo} alt="Valdur Design" />
           </div>
-          <h1>VALDUR</h1>
+          <h1>Valdur Design</h1>
 
         </Link>
 
@@ -104,7 +104,7 @@ export default function Header() {
             ))}
           </ul>
           {isOpen && (
-            <div style={{ transform: "translateX(33%)" }}>
+            <div style={{ transform: "translate(36%, 13vh)" }}>
               <Circles />
             </div>
           )}
