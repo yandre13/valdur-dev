@@ -7,17 +7,14 @@ function Item() {
 
   const handleClick = () => {
     setOpen(!open)
-    console.log({ open })
   }
   return (
     <li className="experience-item">
-
       <div className="experience-date">
         <h3>
           Nov 2019 - Present
         </h3>
       </div>
-
       <div className="experience-container">
         <h4>
           Product Designer
@@ -42,13 +39,9 @@ function Item() {
           </ul>
         </div>
       </div>
-
       <div className={`button ${open ? 'active' : ''}`} role="button" onClick={handleClick}>
         <img src={up} alt="Arrow" />
       </div>
-
-
-
     </li>
   )
 }

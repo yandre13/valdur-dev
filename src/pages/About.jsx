@@ -12,7 +12,6 @@ export default function About() {
 
   return (
     <main className="AboutPage">
-
       {/* <Balls /> */}
       <section className="About container">
         <div className="image">

@@ -35,7 +35,6 @@ export default function Balls() {
 
   return (
     <section className="Balls container" ref={ref}>
-
       <motion.div className="ball ball-1 ball-yellow ball-md" style={{
         translateY: y1
       }}></motion.div>
@@ -81,7 +80,6 @@ export default function Balls() {
           translateY: y1
         }}
       ></motion.div>
-
     </section>
   )
 }

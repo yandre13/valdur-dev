@@ -1,7 +1,5 @@
 
 import { useState } from "react";
-import LetsTalk from "../components/LetsTalk";
-
 
 export default function Contact() {
 

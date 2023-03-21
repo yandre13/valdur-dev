@@ -6,7 +6,6 @@ export default function LetsTalk() {
 
   return (
     <section className="LetsTalk container">
-
       <div className="lets-talk-text">
         <h3 className="title-section">
           <span className="font-rainbow text-trans-initial">Let’s talk</span> about the next big thing
@@ -28,9 +27,6 @@ export default function LetsTalk() {
       >
         <img src={up} alt="Back" />
       </div>
-
-
-
     </section>
   )
 }
