@@ -533,6 +533,7 @@ html {
   max-width: 300px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
 
 .gallery__item .image {
@@ -541,6 +542,7 @@ html {
   max-height: 256px;
   object-fit: cover;
   border-radius: 24px;
+  border-bottom-right-radius: 0;
 }
 .gallery__item .content {
   padding: 24px 26px;
@@ -550,6 +552,20 @@ html {
   font-weight: 700;
   line-height: 36px;
   color: #03050f;
+}
+.gallery__item .tag {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #03050f;
+  background: #7eff8b;
+
+  padding: 4px 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
 }
 .gallery__item .button {
   display: inline-flex;
@@ -561,6 +577,16 @@ html {
   line-height: 20px;
   letter-spacing: 0.4px;
   color: #7678ed;
+  transition: all 0.3s ease;
+}
+.gallery__item .button:hover {
+  color: #2b2b77;
+}
+.gallery__item .button svg path {
+  transition: all 0.3s ease;
+}
+.gallery__item .button:hover svg path {
+  fill: #2b2b77;
 }
 
 .projects-circles-top {
@@ -617,6 +643,10 @@ html {
     column-gap: 32px;
     row-gap: 80px;
     padding-bottom: 264px;
+  }
+  .gallery__item .tag {
+    top: 32px;
+    left: 32px;
   }
   .top264 {
     position: relative;
@@ -889,6 +919,11 @@ html {
   color: #ffffff;
   box-shadow: 0px 2px 4px 0px #00000040;
   border-radius: 40px;
+  transition: all 0.3s ease;
+}
+.main-button:hover {
+  background: #2b2b77;
+  box-shadow: 0px 2px 4px 0px #00000040;
 }
 
 /* ABOUT PAGE */
@@ -1047,6 +1082,59 @@ html {
 
   .AboutPage .experience-item > .button {
     top: 0;
+  }
+}
+
+/* PROJECTS PAGE */
+.ProjectsPage .Content {
+  padding-top: 66px;
+  padding-bottom: 50px;
+}
+
+.ProjectsPage .gallery {
+  margin-top: 40px;
+}
+.ProjectsPage .gallery__item .image {
+  height: 260px;
+}
+@media screen and (min-width: 768px) {
+  .ProjectsPage .gallery {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 80px;
+    row-gap: 56px;
+    padding-bottom: 0;
+  }
+  .ProjectsPage .Content {
+    padding-bottom: 80px;
+  }
+
+  .ProjectsPage .gallery__item {
+    max-width: none;
+  }
+  .ProjectsPage .gallery__item:nth-child(1),
+  .ProjectsPage .gallery__item:nth-child(5) {
+    grid-column: 1 / 6;
+  }
+  .ProjectsPage .gallery__item:nth-child(2),
+  .ProjectsPage .gallery__item:nth-child(6) {
+    grid-column: 6 / 9;
+  }
+  .ProjectsPage .gallery__item:nth-child(3),
+  .ProjectsPage .gallery__item:nth-child(7) {
+    grid-column: 1 / 4;
+  }
+  .ProjectsPage .gallery__item:nth-child(4),
+  .ProjectsPage .gallery__item:nth-child(8) {
+    grid-column: 4 / 9;
+  }
+  .ProjectsPage .gallery__item .content {
+    padding: 32px;
+  }
+  .ProjectsPage .gallery__item .image {
+    max-height: 346px;
+  }
+  .ProjectsPage .gallery__item .button {
+    margin-top: 16px;
   }
 }
 

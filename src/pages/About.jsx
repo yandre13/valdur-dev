@@ -59,7 +59,7 @@ export default function About() {
 
       <Experience />
 
-      <div className="spacer"></div>
+      <div className="spacer" />
 
       <LetsTalk />
     </main>
