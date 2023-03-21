@@ -1035,6 +1035,10 @@ html {
   line-height: 0;
   z-index: 1;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.AboutPage .experience-item .button.active {
+  transform: rotate(180deg);
 }
 .spacer {
   height: 122px;

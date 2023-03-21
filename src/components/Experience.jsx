@@ -43,7 +43,7 @@ function Item() {
         </div>
       </div>
 
-      <div className="button" role="button" onClick={handleClick}>
+      <div className={`button ${open ? 'active' : ''}`} role="button" onClick={handleClick}>
         <img src={up} alt="Arrow" />
       </div>
 
