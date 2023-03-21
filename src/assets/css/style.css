@@ -822,14 +822,18 @@ html {
 }
 
 .social-media ul li a {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0px 1px 4px 0px #0d19851f;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.social-media ul li a img {
+  transform: scale(1.2);
 }
 .LetsTalk .button-back {
   position: absolute;
@@ -872,9 +876,13 @@ html {
     margin-top: 32px;
   }
   .social-media ul li a {
-    height: 48px;
-    width: 48px;
+    height: 56px;
+    width: 56px;
   }
+  .social-media ul li a img {
+    transform: scale(1.2);
+  }
+
   .LetsTalk .button-back {
     right: 40px;
     bottom: 40px;
@@ -1139,6 +1147,90 @@ html {
   }
   .ProjectsPage .gallery__item .button {
     margin-top: 16px;
+  }
+}
+
+/* CONTACT PAGE */
+.ContactPage .Content {
+  padding-top: 66px;
+  padding-bottom: 50px;
+}
+
+.ContactPage .Form p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.ContactPage .Form {
+  margin-top: 40px;
+  background: #fcfaf7;
+  box-shadow: 0px 2px 20px 0px #0d19851f;
+  border-radius: 24px;
+  padding: 32px 24px;
+}
+.ContactPage .Form form,
+.ContactPage .Form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.ContactPage .Form form {
+  gap: 60px;
+}
+.ContactPage .Form .form-group {
+  gap: 8px;
+  width: 100%;
+}
+.ContactPage .Form .form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.ContactPage .Form .form-group input,
+.ContactPage .Form .form-group textarea {
+  width: 100%;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 8px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.ContactPage .Form .form-group input::placeholder,
+.ContactPage .Form .form-group textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #c8c8c8;
+}
+.ContactPage .Form .form-group > button {
+  align-self: flex-end;
+}
+.ContactPage .Form .form-group > button:disabled {
+  background: #666666;
+}
+@media screen and (min-width: 768px) {
+  .ContactPage .gallery {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 80px;
+    row-gap: 56px;
+    padding-bottom: 0;
+  }
+  .ContactPage .Content {
+    padding-bottom: 80px;
+  }
+  .ContactPage .Form {
+    padding: 40px 32px;
+  }
+  .ContactPage .Form form {
+    gap: 32px;
+  }
+  .ContactPage .Form .form-group > button {
+    margin-top: 24px;
   }
 }
 

@@ -1,32 +1,11 @@
 import { Link } from "react-router-dom";
-import Card from "../components/Card";
+
 import Tools from "../components/Tools";
-import Visit from "../components/Visit";
 
-import letter from "../assets/svg/letter.svg";
-import play from "../assets/svg/play.svg";
 
-import Circles from "../components/Circles";
 import LetsTalk from "../components/LetsTalk";
 import Experience from "../components/Experience";
 
-//icons
-
-// useEffect(() => {
-//   const dotsSequence = [".", "..", "...", ".."];
-//   let index = 0;
-//   let direction = 1;
-
-//   const intervalId = setInterval(() => {
-//     setDots(dotsSequence[index]);
-//     index += direction;
-//     if (index === dotsSequence.length - 1 || index === 0) {
-//       direction = -direction;
-//     }
-//   }, 500);
-
-//   return () => clearInterval(intervalId);
-// }, []);
 
 export default function About() {
 

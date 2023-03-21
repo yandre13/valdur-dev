@@ -1,9 +1,5 @@
-import { Link } from "react-router-dom";
-import Tools from "../components/Tools";
-
 
 import LetsTalk from "../components/LetsTalk";
-import Experience from "../components/Experience";
 import Card from "../components/Card";
 
 

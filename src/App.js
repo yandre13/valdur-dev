@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
 import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about-me" element={<About />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="contact-me" element={<Contact />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

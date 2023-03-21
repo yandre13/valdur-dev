@@ -5,11 +5,8 @@ import Visit from "../components/Visit";
 
 import letter from "../assets/svg/letter.svg";
 import play from "../assets/svg/play.svg";
-import Balls from "../components/Balls";
 import Circles from "../components/Circles";
 
-//icons
-import arrow from "../assets/svg/arrow.svg"
 import Arrow from "../components/Arrow";
 import LetsTalk from "../components/LetsTalk";
 
