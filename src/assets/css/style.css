@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul {
+  list-style: none;
+}
 
 a {
   text-decoration: none;
@@ -897,12 +900,153 @@ html {
   letter-spacing: 0.2px;
   margin-top: 16px;
 }
+.AboutPage .About {
+  padding-bottom: 66px;
+}
+.AboutPage .Experience {
+  padding-bottom: 50px;
+}
+.AboutPage .Experience > h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
+}
+.AboutPage .Experience .experience-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0px 0px 16px 0px #0000001a;
+  border-radius: 24px;
+}
+.AboutPage .Experience h2 {
+  margin-bottom: 16px;
+}
+.AboutPage .experience-list .experience-item {
+  position: relative;
+  padding-bottom: 8px;
+}
+.AboutPage .experience-list .experience-item::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 1px;
+  background: #cdd1eb;
+}
+.AboutPage .experience-list .experience-item:last-child::after {
+  display: none;
+}
+
+.AboutPage .experience-item .experience-date h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #7678ed;
+}
+.AboutPage .experience-item .experience-container > h4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #7678ed;
+}
+.AboutPage .experience-item .experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.AboutPage .experience-item .experience-content.active {
+  opacity: 1;
+  overflow: visible;
+  max-height: 1400px;
+}
+.AboutPage .experience-item .experience-content h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  margin-top: 8px;
+}
+.AboutPage .experience-item .experience-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.AboutPage .experience-item .experience-content ul li::marker {
+  font-size: 12px;
+}
+.AboutPage .experience-item .experience-content ul li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.AboutPage .experience-item > .button {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  line-height: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.spacer {
+  height: 122px;
+  background: #7678ed;
+}
 @media screen and (min-width: 768px) {
   .AboutPage.About {
     gap: 80px;
   }
   .AboutPage .about-text {
     padding-top: 40px;
+  }
+  .AboutPage .Experience {
+    padding-bottom: 66px;
+  }
+  .AboutPage .Experience .experience-list {
+    padding: 40px;
+    gap: 62px;
+  }
+  .AboutPage .Experience > h3 {
+    margin-bottom: 32px;
+  }
+  .AboutPage .experience-list .experience-item {
+    display: flex;
+    gap: 32px;
+  }
+  .AboutPage .experience-list .experience-item .experience-date {
+    flex-shrink: 0;
+  }
+  .AboutPage .experience-list .experience-item .experience-container {
+    padding-right: 58px;
+  }
+  .AboutPage .experience-list .experience-item::after {
+    bottom: -32px;
+  }
+  .AboutPage .experience-item .experience-content.active {
+    max-height: 700px;
+  }
+  .AboutPage .experience-item .experience-content h4 {
+    margin-top: 16px;
+  }
+  .AboutPage .experience-item .experience-content ul {
+    gap: 16px;
+  }
+
+  .AboutPage .experience-item > .button {
+    top: 0;
   }
 }
 
