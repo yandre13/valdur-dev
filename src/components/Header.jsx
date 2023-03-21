@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/svg/logo.svg"
+import useMedia from "../hooks/useMedia";
 import Circles from "./Circles";
 
 const links = [
@@ -45,32 +46,26 @@ export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const isDesktop = useMedia("(min-width: 768px)")
 
   const handleToggle = () => {
     const navlinks = document.querySelector(".navlinks");
-    navlinks.classList.toggle("active");
+    if (!isDesktop) {
+      navlinks.classList.toggle("active");
+    }
     setIsOpen(!isOpen);
   }
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
     const navlinks = document.querySelector(".navlinks");
     const burgerButton = document.querySelector(".burger-button");
 
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        navlinks.classList.remove("active");
-        burgerButton.classList.remove("active");
-        setIsOpen(false);
-      }
+    if (isDesktop) {
+      navlinks.classList.remove("active");
+      burgerButton.classList.remove("active");
+      setIsOpen(false);
     }
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    }
-  }, [])
+  }, [isDesktop])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +94,9 @@ export default function Header() {
           <ul>
             {links.map((link, index) => (
               <li key={index}>
-                <NavLink to={link.path} className={({ isActive }) => isActive ? "active" : ""}>{link.name}</NavLink>
+                <NavLink to={link.path} className={({ isActive }) => isActive ? "active" : ""}
+                  onClick={handleToggle}
+                >{link.name}</NavLink>
               </li>
             ))}
           </ul>

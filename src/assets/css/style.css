@@ -599,7 +599,7 @@ html {
 .projects-circles-bottom {
   position: absolute;
   bottom: 184px;
-  left: 72px;
+  left: -96px;
   width: 300px;
   transform: scale(0.6);
 }
