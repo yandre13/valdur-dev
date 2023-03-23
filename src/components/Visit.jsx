@@ -12,7 +12,6 @@ const styles = {
 
 export default function Visit({ fixed }) {
 
-
   const ref = useRef(null)
   useEffect(() => {
     //get height of entire document
