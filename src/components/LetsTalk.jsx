@@ -1,6 +1,7 @@
 import Arrow from "./Arrow";
 import Visit from "./Visit";
 import up from "../assets/svg/button-back.svg";
+import { Link } from "react-router-dom";
 
 export default function LetsTalk() {
 
@@ -16,7 +17,7 @@ export default function LetsTalk() {
         </p>
 
         <div className="button-container">
-          <button className="main-button">Send a message</button>
+          <Link to="/contact-me" className="main-button">Send a message</Link>
         </div>
       </div>
       <Arrow v2 />

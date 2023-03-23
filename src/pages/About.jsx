@@ -29,8 +29,8 @@ export default function About() {
 
           <Tools customClass="paddings" />
 
-          <Link className="main-button" to="/about-me">
-            Send me a message
+          <Link className="main-button" to="/contact-me">
+            Send a message
           </Link>
         </div>
       </section>
