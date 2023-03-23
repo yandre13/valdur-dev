@@ -13,14 +13,14 @@ export default function Projects() {
           My Projects<span className="text-orange">.</span>
         </h2>
         <div className="gallery">
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
-          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cardback.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
+          <Card title="Ux Case Study <br> RIMAC insurances" image="/img/Cover.png" link="#" tag="UX / UI Design" />
         </div>
       </section>
 
