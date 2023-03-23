@@ -15,7 +15,7 @@ export default function About() {
       {/* <Balls /> */}
       <section className="About container">
         <div className="image">
-          <img className="photo" src="/img/AboutPhoto.png" alt="About me" />
+          <img className="photo" src="/img/AboutMe.png" alt="About me" />
         </div>
 
         <div className="about-text">

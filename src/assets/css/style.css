@@ -1177,6 +1177,7 @@ html {
 }
 .ContactPage .Form form {
   gap: 60px;
+  margin-top: 40px;
 }
 .ContactPage .Form .form-group {
   gap: 8px;

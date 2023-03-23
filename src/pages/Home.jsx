@@ -105,7 +105,7 @@ export default function Home() {
 
           <Tools />
 
-          <Link className="main-button" to="/about-me">
+          <Link className="main-button" to="/projects">
             Find more
           </Link>
         </div>
